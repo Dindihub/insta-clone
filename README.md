@@ -9,7 +9,7 @@ This Application is an instagram application clone. It allows allows users to re
 
 Sandra Dindi
 
-You can view the site at:[insta-clone]()
+You can view the site at:[insta-clone](https://instaclone2050.herokuapp.com/)
 
 
 
