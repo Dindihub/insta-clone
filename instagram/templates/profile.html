@@ -1,4 +1,5 @@
 {% extends 'layout.html'%}
+<<<<<<< HEAD
 {% load bootstrap4 %}
 {% load static %}
 {% load crispy_forms_tags %}
@@ -25,5 +26,23 @@
         </div>
     </div>
 </div>
+=======
+{% load bootstrap4 %} 
+{% load static %} 
+{% load crispy_forms_tags %} 
+{% block content %} 
+
+{% for profile in profiles %}
+<img src="{{profile.profile_photo.url}}" width="200px" alt="" />
+<p>{{ profile.bio}}</p>
+
+
+
+{% endfor %}
+<a href="{% url 'update_profile' %}">
+<button class="btn btn-warning">Edit profile</button>
+</a>
+
+>>>>>>> 4b542f5fd5f7f96bf5c291345af4278b45f5d741
 
 {% endblock %}
