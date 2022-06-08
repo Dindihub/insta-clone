@@ -30,6 +30,11 @@ class Profile(models.Model):
 
     def delete_profile(self):
         self.delete()
+        
+    def update_profile(self,id,profile):
+        updated_profile=Profile.objects.filter(id=id).update(profile)
+        return updated_profile
+
 
     @classmethod
     def search_profile(cls, name):
@@ -74,11 +79,8 @@ class Comment(models.Model):
         ordering = ["-pk"]
 
 
-    def __str__(self):
-        return f'{self.user.name} Image'
 
-    class Meta:
-        ordering = ["-pk"]
+    
 
 
 class Follow(models.Model):
