@@ -1,0 +1,29 @@
+{% extends 'layout.html'%}
+{% load bootstrap4 %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="card mb-3" style="max-width:fit content;">
+    <div class="row g-0">
+        <div class="col-md-4">
+            <img src="{{user.profile.profile_photo.url}}" width="200px" alt="Trendy Pants and Shoes"
+                class="mx-auto d-block rounded-circle" />
+        </div>
+
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">{{request.user}}</h5><span><a href="{% url 'update_profile' %}">
+                       <button class="btn" style="width:150px;">Edit profile</button>
+                    </a></span>
+                <p class="card-text pt-3">  <span class=""> Posts:</span> <span class="p-4">followers:</span> <span class="p-4">following:</span></p>
+                <p class="card-text pt-4"> {{ user.profile.bio}}</p>
+                
+
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

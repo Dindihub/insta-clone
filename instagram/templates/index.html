@@ -1,0 +1,79 @@
+{% extends 'base.html' %} 
+{% load bootstrap4 %} 
+{% load static %} 
+{% block content %}
+
+<section id="features-3" class="landingpage features-2-section d-flex">
+	<div class="container-fluid " >
+		<div class="row " >
+			<div class="col-md-sm-6">
+				<div class="phones order-alt">
+					<img class="phoneback"
+						src="https://cdn.pixabay.com/photo/2013/07/13/12/46/iphone-160307_960_720.png" alt />
+					<img class="phonefront" src="" alt />
+				</div>
+			</div>
+
+			<!-- login section -->
+
+
+			<div class=" row col-md-4 d-flex justify-content-center" >
+				<div class="user_card">
+					<div class="  d-flex justify-content-center p-4" style="background-color: white">
+						<h3 id="form-title">INSTAGRAM</h3>
+					</div>
+					<div class="d-flex justify-content-center form_container" style="background-color: white">
+						<form method="POST" action="" class="form p-4">
+							{% csrf_token %}
+							<div class="input-group mb-3">
+								<div class="input-group-append">
+									<span class="input-group-text"><i class="fas fa-user"></i></span>
+								</div>
+								<input type="text" name="username" placeholder="Username..." class="form-control" />
+							</div>
+							<div class="input-group mb-2">
+								<div class="input-group-append">
+									<span class="input-group-text"><i class="fas fa-key"></i></span>
+								</div>
+								<input type="password" name="password" placeholder="Password..." class="form-control" />
+							</div>
+
+							<div class="d-flex justify-content-center mt-3 login_container">
+								<input class="btn btn-primary col-md-6" type="submit"  name="login" value="login" />
+							</div>
+							<div class="mt-2">
+								<p class="text-center"> OR </p>
+							</div>
+							<div>
+								<p class="text-center"><small > Login with facebook</small></p>
+							</div>
+							<div>
+								<p class="text-center"><small > Forgot password?</small></p>
+							</div>
+						</form>
+					</div>
+					<div>
+					{% for message in messages %}
+    				<p style="background-color:orange">{{message}} </p>
+    				{% endfor %}
+					</div>
+
+					<div class="mt-4 p-4" style="background-color:white">
+						<div class="d-flex justify-content-center links">
+							 <small>Don't have an account?</small>  
+							<a href="{% url 'register' %}" class="ml-2">Sign Up</a>
+						</div>
+					</div>
+					<div>
+						<p class="text-center"><small>Get the app</small></p>
+					</div>
+					<div>
+						<img  class="img ml-5" src="https://www.pngitem.com/pimgs/m/114-1144050_transparent-google-play-png-app-store-google-play.png" alt="" srcset="" style="max-width:200px" >
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+{% endblock %}
